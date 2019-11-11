@@ -1,0 +1,118 @@
+type: //rec
+required:
+    title:
+        type: //str
+        length:
+            min: 1
+            max: 256
+    logsource:
+        type: //rec
+        optional:
+            category: //str
+            product: //str
+            service: //str
+            definition: //str
+    detection:
+        type: //rec
+        required:
+            condition:
+                type: //any
+                of:
+                    - type: //str
+                    - type: //arr
+                      contents: //str
+                      length:
+                          min: 2
+        optional:
+            timeframe: //str
+        rest:
+            type: //any
+            of:
+                - type: //arr
+                  contents: //str
+                - type: //map
+                  values:
+                      type: //any
+                      of:
+                          - type: //str
+                          - type: //arr
+                            contents: //str
+                            length:
+                                min: 2
+optional:
+    id:
+        type: //any
+        of:
+            - type: //str
+              length:
+                  min: 1
+                  max: 64
+    related:
+        type: //arr
+        contents:
+            type: //rec
+            required:
+                type:
+                    type: //any
+                    of:
+                        - type: //str
+                          value: derived
+                        - type: //str
+                          value: obsoletes
+                        - type: //str
+                          value: merged
+                        - type: //str
+                          value: renamed
+                id:
+                    type: //any
+                    of:
+                        - type: //str
+                          length:
+                              min: 1
+                              max: 64
+                        - type: //arr
+                          contents: //str
+                          length:
+                              min: 1
+                              max: 64
+    status:
+        type: //any
+        of:
+            - type: //str
+              value: stable
+            - type: //str
+              value: testing
+            - type: //str
+              value: experimental
+    description: //str
+    author: //str
+    license: //str
+    references:
+        type: //arr
+        contents: //str
+    fields:
+        type: //arr
+        contents: //str
+    falsepositives:
+        type: //any
+        of:
+            - type: //str
+            - type: //arr
+              contents: //str
+              length:
+                  min: 2
+    level:
+        type: //any
+        of:
+            - type: //str
+              value: low
+            - type: //str
+              value: medium
+            - type: //str
+              value: high
+            - type: //str
+              value: critical
+    tags:
+        type: //arr
+        contents: //str
+rest: //any
