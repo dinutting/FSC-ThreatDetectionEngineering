@@ -1,0 +1,22 @@
+title: Scheduled Task Creation
+description: Detects when scheduled tasks are created. Watches for a few commonly known malicious keywords.
+status: experimental
+author: Kyler Volakos
+logsource:
+  product: windows
+  service: taskscheduler
+detection:
+  keywords:
+    - test.exe
+    - Watchmon Service
+    - BigData
+  keywords2:
+    - schtasks
+  selection:
+    EventID:
+      - 106
+      - 4698
+  condition: selection or (keywords1 AND keywords2)
+level: low
+tags:
+  - attack.t1053
