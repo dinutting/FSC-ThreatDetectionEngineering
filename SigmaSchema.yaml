@@ -7,8 +7,7 @@ logsource:
   service:
 detection:
   keywords:
-    - test.exe
-    - Watchmon Service
+    - System.Management.Automation.dll
   keywords2:
   selection:
     EventID:
@@ -17,3 +16,4 @@ detection:
   condition: selection or (keywords1 AND keywords2)
 level: low
 tags:
+resources: https://attack.mitre.org/techniques/T1050/
