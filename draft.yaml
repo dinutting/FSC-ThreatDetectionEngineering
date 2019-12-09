@@ -7,12 +7,13 @@ logsource:
   service: security
 detection:
   keywords1:
-    # - fin7 
+    # - fin7 for event id 4698
     - byzNne17.exe	
     - c9FGG17.exe	
     - zEsb17.exe	
   keywords2:
-    - test.exe # - APT3 downloader creates persistence by creating a scheduled task called test.exe 
+    # - APT3 downloader creates persistence by creating a scheduled task called test.exe for event id 4698
+    - test.exe  
   selection:
     EventID:
       - 4698
