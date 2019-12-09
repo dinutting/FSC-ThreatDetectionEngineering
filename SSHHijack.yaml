@@ -1,0 +1,16 @@
+title: NSSH Hijacking Detection
+description: Detects when an attempt to hijack the secure shell is taking place.
+status: experimental
+author: Regan Johnson
+logsource:
+  product: windows
+  service: security
+detection:
+  keywords:
+  keywords2:
+  selection:
+    EventID:
+  condition: selection or (keywords1 AND keywords2)
+level: low
+tags:
+resources:
