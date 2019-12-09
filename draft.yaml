@@ -7,9 +7,12 @@ logsource:
   service: security
 detection:
   keywords1:
-    - 
+    # - fin7 
+    - byzNne17.exe	
+    - c9FGG17.exe	
+    - zEsb17.exe	
   keywords2:
-    - 
+    - test.exe # - APT3 downloader creates persistence by creating a scheduled task called test.exe 
   selection:
     EventID:
       - 4698
@@ -26,3 +29,5 @@ references:
   - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4698
   - https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-schema?redirectedfrom=MSDN
   - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4698
+  - https://attack.mitre.org/groups/G0022/
+  - https://securelist.com/fin7-5-the-infamous-cybercrime-rig-fin7-continues-its-activities/90703/
