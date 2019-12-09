@@ -1,22 +1,25 @@
 title: Scheduled Task Creation
-description: Detects when scheduled tasks are created. Watches for a few commonly known malicious keywords.
+description: Detects when scheduled tasks, likely intended to establish persistence, are created. False-positives on restarts scheduled by non-Windows programs or users. Keywords1 contain some commonly known persistence terms, keywords2 searches for use of shutdown.exe to restart.
 status: experimental
 author: Kyler Volakos
 logsource:
   product: windows
-  service: taskscheduler
+  service: security
 detection:
-  keywords:
+  keywords1:
     - test.exe
     - Watchmon Service
     - BigData
   keywords2:
-    - schtasks
+    - shutdown.exe
   selection:
     EventID:
-      - 106
       - 4698
-  condition: selection or (keywords1 AND keywords2)
+  condition: selection AND (keywords1 OR keywords2)
 level: low
 tags:
   - attack.t1053
+references:
+  - https://jask.com/wp-content/uploads/2019/08/Detecting-Windows-Persistence.pdf
+  - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4698
+  - https://attack.mitre.org/techniques/T1053/
