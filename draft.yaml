@@ -1,0 +1,28 @@
+title: Scheduled Task Creation
+description: Alerts when a scheudle task is created, deleted, enabled, disabled, updated
+status: experimental
+author: Matthew Traino
+logsource:
+  product: windows
+  service: security
+detection:
+  keywords1:
+    - 
+  keywords2:
+    - 
+  selection:
+    EventID:
+      - 4698
+      - 4699
+      - 4700
+      - 4701
+      - 4702
+  condition: selection AND (keywords1 OR keywords2)
+level: low
+tags:
+  - attack.t1053
+references:
+  - https://attack.mitre.org/techniques/T1053/
+  - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4698
+  - https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-schema?redirectedfrom=MSDN
+  - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4698
