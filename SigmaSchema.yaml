@@ -1,10 +1,10 @@
-title: New Service Creation
-description: Detects when detects are created.
+title: New Service Creation detection
+description: Detects when detects are created. Looks for powershell usage, requires loging of Windows Management Instrumentation and service installment history.
 status: experimental
 author: Brian Mills
 logsource:
   product: windows
-  service:
+  service: Services
 detection:
   keywords:
     - System.Management.Automation.dll
@@ -16,4 +16,11 @@ detection:
   condition: selection or (keywords1 AND keywords2)
 level: low
 tags:
-resources: https://attack.mitre.org/techniques/T1050/
+  - attack.t1050
+resources:
+  -https://attack.mitre.org/techniques/T1050/
+  -https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf
+  -https://attack.mitre.org/techniques/T1047/
+  -https://attack.mitre.org/techniques/T1086/
+  -https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns
+  -https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772408(v=ws.11)?redirectedfrom=MSDN
