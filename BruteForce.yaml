@@ -11,7 +11,12 @@ detection:
   selection:
     EventID:
       - 4625
+      - 4771
+      - 4648
   condition: selection or (keywords1 AND keywords2)
 level: low
 tags:
+  - attack.t1110
 resources:
+      - https://attack.mitre.org/techniques/T1110/
+      - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625
