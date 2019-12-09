@@ -1,5 +1,5 @@
-title: NSSH Hijacking Detection
-description: Detects when an attempt to hijack the secure shell is taking place.
+title: Brute Force
+description: Detects when an intruder is attempting to brute force an account
 status: experimental
 author: Regan Johnson
 logsource:
@@ -10,6 +10,7 @@ detection:
   keywords2:
   selection:
     EventID:
+      - 4625
   condition: selection or (keywords1 AND keywords2)
 level: low
 tags:
