@@ -14,6 +14,10 @@ detection:
   keywords2:
     # - APT3 downloader creates persistence by creating a scheduled task called test.exe for event id 4698
     - test.exe  
+   keywords3:
+    - at.exe # creation of scheduled tasks on a windows machine not running windows 10
+   keywords4:
+    - schtasks.exe # creation of scheduled tasks on a windows machine running windows 10
   selection:
     EventID:
       - 4698
@@ -21,7 +25,7 @@ detection:
       - 4700
       - 4701
       - 4702
-  condition: selection AND (keywords1 OR keywords2)
+  condition: selection AND (keywords1 OR keywords2 OR keywords3 OR keywords4)
 level: low
 tags:
   - attack.t1053
