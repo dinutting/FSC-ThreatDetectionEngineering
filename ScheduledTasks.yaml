@@ -1,0 +1,26 @@
+title: Scheduled Task Alert
+description: Fires an alert when a scheduled task is created or deleted.
+status: eexperimental
+author: Will James
+logsource:
+    product: windows
+    service: taskscheduler
+detection:
+    keywords:
+        test.exe #used by apt3
+        wscript.exe #used by powerstats
+        scvhost.exe
+        taskeng.exe
+    selection:
+        EventID:
+        - 4698
+        - 4699
+    condition: selection OR keywords
+level: low
+tags: 
+ - attack.T1053
+references:
+    - https://attack.mitre.org/techniques/T1053/
+    - https://docs.microsoft.com/en-us/windows/win32/taskschd/about-the-task-scheduler
+    - https://docs.microsoft.com/en-us/windows/win32/taskschd/schtasks
+    - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4698
