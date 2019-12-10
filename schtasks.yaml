@@ -3,9 +3,10 @@ description: Alerts when a scheduled task is created, deleted, enabled, disabled
 status: experimental
 author: Matthew Traino
 # reviewed by kvolakos
+# reviewed by wjames
 logsource:
   product: windows
-  service: security
+  service: taskscheduler
 detection:
   keywords:
     # - fin7 for event id 4698
