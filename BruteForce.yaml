@@ -9,7 +9,6 @@ detection:
   keywords:
     - Hydra
     - BruteForcer
-  keywords2:
   selection:
     EventID:
       - 4625
