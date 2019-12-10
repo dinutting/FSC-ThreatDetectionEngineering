@@ -2,18 +2,18 @@ title: New Service Creation detection
 description: Detects when detects are created. Looks for powershell usage, requires loging of Windows Management Instrumentation and service installment history.
 status: experimental
 author: Brian Mills
+# reviewed by kvolakos
 logsource:
   product: windows
   service: Services
 detection:
   keywords:
     - System.Management.Automation.dll
-  keywords2:
   selection:
     EventID:
       - 7045
       - 4697
-  condition: selection or (keywords1 AND keywords2)
+  condition: selection OR keywords
 level: low
 tags:
   - attack.t1050
