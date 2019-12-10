@@ -2,6 +2,7 @@ title: Dynamic Data Exchange
 description: Detects potentially unusual processes depending on spawn location. Watches for a few commonly known DLL files which could be malicious if they are not typically associated with the application that they load from.
 status: Experimental
 author: John Pentek
+# reviewed by Regan
 logsource:
   product: Windows
   service: Security
