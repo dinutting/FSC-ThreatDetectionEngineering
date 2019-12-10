@@ -2,6 +2,7 @@ title: Credentials in Registry- TrickBot
 description: Detects if there are unwanted persons accessing the registry inorder to protect the user credentials. This specific yaml is for decting Trickbot entry through PuTTY. Adversary has already infected the system and are attempting to gain credentail access.
 status: Experimental
 author: Barbara Bailey
+# reviewed by Regan
 logsource:
   product: Windows
   service: Tool
