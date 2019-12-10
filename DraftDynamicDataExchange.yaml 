@@ -1,0 +1,23 @@
+title: Dynamic Data Exchange
+description: Detects potentially unusual processes depending on spawn location. Watches for a few commonly known DLL files which could be malicious if they are not typically associated with the application that they load from.
+status: Experimental
+author: John Pentek
+logsource:
+  product: Windows
+  service: Security
+detection:
+  keywords:
+    - cmd.exe
+    - Equation Editor
+    - PowerShell
+    - user32.dll
+    - msvcr80.dll
+    - msvcr71.dll
+    - msvbvm60.dll
+    - msvbvm50.dll
+  condition: keywords
+level: low
+tags:
+  - attack.t1173
+resources:
+  - https://attack.mitre.org/techniques/T1173/
