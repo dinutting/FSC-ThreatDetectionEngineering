@@ -19,6 +19,7 @@ detection:
 level: low
 tags: 
  - attack.T1053
+ - attack.S0111
 references:
     - https://attack.mitre.org/techniques/T1053/
     - https://docs.microsoft.com/en-us/windows/win32/taskschd/about-the-task-scheduler
