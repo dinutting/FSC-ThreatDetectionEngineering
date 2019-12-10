@@ -1,5 +1,5 @@
 title: Brute Force
-description: Detects when an intruder is attempting to brute force an account
+description: Detects when an adversary is attempting to gain access to a user's account throug h brute force hacking
 status: experimental
 author: Regan Johnson
 logsource:
@@ -21,3 +21,4 @@ tags:
 resources:
       - https://attack.mitre.org/techniques/T1110/
       - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625
+      - https://capec.mitre.org/data/definitions/112.html
