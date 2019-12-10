@@ -1,5 +1,5 @@
 title: Brute Force
-description: Detects when an adversary is attempting to gain access to a user's account throug h brute force hacking
+description: Detects when an adversary is attempting to gain access to a user's account through brute force.
 status: experimental
 author: Regan Johnson
 logsource:
@@ -14,7 +14,7 @@ detection:
       - 4625
       - 4771
       - 4648
-  condition: selection 
+  condition: selection OR keywords
 level: low
 tags:
   - attack.t1110
