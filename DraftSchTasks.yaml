@@ -16,7 +16,7 @@ detection:
   selection:
     EventID:
       - 4698
-  condition: selection or (keywords1 AND keywords2)
+  condition: selection AND (keywords1 OR keywords2)
 level: low
 tags:
   - attack.t1053
