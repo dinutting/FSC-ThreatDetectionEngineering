@@ -2,6 +2,7 @@ title: Scheduled Task Creation
 description: Detects when scheduled tasks, likely intended to establish persistence, are created. False-positives on restarts scheduled by non-Windows programs or users. Keywords1 contain some commonly known persistence terms, keywords2 searches for use of shutdown.exe to restart.
 status: experimental
 author: Kyler Volakos
+# reviewed by mtraino
 logsource:
   product: windows
   service: security
