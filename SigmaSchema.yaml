@@ -1,5 +1,5 @@
 title: New Service Creation detection
-description: Detects when services are created. Looks for powershell usage, requires loging of Windows Management Instrumentation and service installment history.
+description: Detects when services are created and looks for powershell usage. Requires loging of Windows Management Instrumentation and service installment history.
 status: experimental
 author: Brian Mills
 # reviewed by kvolakos
